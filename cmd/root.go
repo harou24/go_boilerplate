@@ -9,7 +9,6 @@ var (
 		Use:   "hello",
 		Short: "say hello",
 		Long:  "hello is a very basic command that says hello",
-		Run:   func(cmd *cobra.Command, args []string) {},
 	}
 )
 
