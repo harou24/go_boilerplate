@@ -1,4 +1,4 @@
-module github.com/harou24/go_boilerplate.git
+module github.com/harou24/go_boilerplate
 
 go 1.19
 
