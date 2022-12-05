@@ -1,28 +1,22 @@
 package cmd
 
 import (
-	"fmt"
-
+	"github.com/harou24/go_boilerplate/api"
 	"github.com/spf13/cobra"
 )
 
-var flag string
+var port string
 
 func init() {
-	rootCmd.AddCommand(sayHelloCmd)
-	sayHelloCmd.PersistentFlags().StringVarP(&flag, "world", "w", "", "add world to hello")
+	rootCmd.AddCommand(start)
+	start.PersistentFlags().StringVarP(&port, "port", "p", "", "run on a different port, default is 5000")
 }
 
-var sayHelloCmd = &cobra.Command{
+var start = &cobra.Command{
 	Use:   "start",
 	Short: "start the API server",
-	Long:  "Start the API serve that will listen on port 5000.",
+	Long:  "Start the API server that will listen on port 5000.",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Print("Hello")
-
-		if flag != "" {
-			fmt.Print(" World")
-		}
-		fmt.Println()
+		api.NewManager().Serve()
 	},
 }
