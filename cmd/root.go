@@ -6,9 +6,9 @@ import (
 
 var (
 	rootCmd = &cobra.Command{
-		Use:   "hello",
-		Short: "say hello",
-		Long:  "hello is a very basic command that says hello",
+		Use:   "go_boilerplate",
+		Short: "A boilerplate to start an API server",
+		Long:  "",
 	}
 )
 

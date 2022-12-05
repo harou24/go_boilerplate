@@ -14,9 +14,9 @@ func init() {
 }
 
 var sayHelloCmd = &cobra.Command{
-	Use:   "hello",
-	Short: "say hello",
-	Long:  "hello is a very basic command that says hello",
+	Use:   "start",
+	Short: "start the API server",
+	Long:  "Start the API serve that will listen on port 5000.",
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Print("Hello")
 
