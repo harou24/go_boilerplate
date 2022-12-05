@@ -25,7 +25,10 @@ func (m *Manager) Serve() {
 	}))
 
 	m.router.Get("/", func(c *fiber.Ctx) error {
-		return c.SendString("Hello ✋")
+		data := map[string]any{
+			"message": "Hello World 🖖",
+		}
+		return c.JSON(data)
 	})
 
 	log.Fatal(m.router.Listen(":5000"))
