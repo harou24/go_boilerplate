@@ -1,4 +1,5 @@
 # Go Boilerplate
+[![Go Test and Build](https://github.com/harou24/go_boilerplate/actions/workflows/main.yml/badge.svg)](https://github.com/harou24/go_boilerplate/actions/workflows/main.yml)
 
 
 <p align="center">
