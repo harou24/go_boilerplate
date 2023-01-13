@@ -12,24 +12,28 @@ type Manager struct {
 }
 
 func NewManager() *Manager {
-	return &Manager{
-		router: fiber.New(),
-	}
-}
-
-func (m *Manager) Serve() {
-
-	m.router.Use(cors.New(cors.Config{
+	router := fiber.New()
+	router.Use(cors.New(cors.Config{
 		AllowOrigins: "*",
 		AllowHeaders: "*",
 	}))
 
-	m.router.Get("/", func(c *fiber.Ctx) error {
-		data := map[string]any{
+	router.Get("/", func(c *fiber.Ctx) error {
+		data := map[string]interface{}{
 			"message": "Hello World 🖖",
 		}
 		return c.JSON(data)
 	})
 
-	log.Fatal(m.router.Listen(":5000"))
+	return &Manager{
+		router: router,
+	}
+}
+
+func (m *Manager) Serve(port string) {
+	log.Fatal(m.router.Listen(":" + port))
+}
+
+func (m *Manager) Close() error {
+	return m.router.Shutdown()
 }

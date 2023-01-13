@@ -17,6 +17,8 @@ var start = &cobra.Command{
 	Short: "start the API server",
 	Long:  "Start the API server that will listen on port 5000.",
 	Run: func(cmd *cobra.Command, args []string) {
-		api.NewManager().Serve()
+		manager := api.NewManager()
+		manager.Serve("5000")
+		defer manager.Close()
 	},
 }
