@@ -23,11 +23,3 @@ This is a Go boilerplate project to quickly start building an API server. It inc
 ## API Routes
 
 By default, the boilerplate includes a single route `GET /` which returns a simple "Hello World 🖖" message. You can add more routes in the `api.Serve()` function in the `api` package.
-
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Please see the [LICENSE](LICENSE) file for more details.
-
-## Contributions
-
-Contributions are welcome! If you find any bugs or have suggestions for improvements, please open an issue or submit a pull request.
